@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          cache: pip
 
       - name: Clone NeoBot framework (contract namespace)
         uses: actions/checkout@v4
