@@ -25,6 +25,7 @@ INDEX_FILE = ROOT / "index.json"
 NAME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9_-]{0,63}$")
 VERSION_RE = re.compile(r"^\d+\.\d+\.\d+$")
 API_VERSION = "1"
+DEFAULT_LICENSE = "AGPL-3.0"
 
 # 契约允许的命名空间前缀（相对插件自身导入而言）
 ALLOWED_IMPORTS = ("neobot.plugin_api", "neobot.models", "neobot.plugins")
@@ -70,6 +71,10 @@ def validate_manifest(plugin_dir: Path) -> dict:
     deps = manifest.get("dependencies", [])
     if not isinstance(deps, list):
         raise ValidationError(f"[{name}] dependencies 必须是数组")
+
+    # 许可证：默认 AGPL-3.0（本仓库插件默认开源协议）
+    license_name = manifest.get("license") or DEFAULT_LICENSE
+    manifest["license"] = license_name
 
     # 必填字段
     for field in ("description", "usage"):
@@ -157,6 +162,7 @@ def collect_plugins() -> list[dict]:
                 "version": manifest["version"],
                 "author": manifest.get("author", ""),
                 "api_version": manifest.get("api_version", API_VERSION),
+                "license": manifest.get("license", DEFAULT_LICENSE),
                 "dependencies": manifest.get("dependencies", []),
                 "entry": str(entry.relative_to(plugin_dir)),
                 "files": sorted(

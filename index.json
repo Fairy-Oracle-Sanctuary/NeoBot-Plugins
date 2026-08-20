@@ -9,6 +9,7 @@
       "version": "0.1.0",
       "author": "镀铬酸钾",
       "api_version": "1",
+      "license": "AGPL-3.0",
       "dependencies": [],
       "entry": "plugin.py",
       "files": [

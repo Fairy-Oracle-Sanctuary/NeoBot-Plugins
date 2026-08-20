@@ -41,6 +41,7 @@ cp -r template/plugin_name plugins/my_plugin
   "version": "0.1.0",
   "author": "镀铬酸钾",
   "api_version": "1",
+  "license": "AGPL-3.0",
   "dependencies": []
 }
 ```
@@ -63,4 +64,7 @@ cp -r template/plugin_name plugins/my_plugin
 
 ## 许可证
 
-MIT（见 [LICENSE](LICENSE)）。插件本身的许可证由各插件 manifest 声明。
+本仓库默认以 **GNU Affero General Public License v3.0 (AGPL-3.0)** 开源（见 [LICENSE](LICENSE)）。
+**收录的插件默认遵循 AGPL-3.0**——如果你通过网络提供服务（如运行 QQ 机器人成为网络服务），**必须**以 AGPL 相同的许可证开放你的完整源代码。
+
+插件作者如需采用其他许可证，可在 `manifest.json` 中声明 `license` 字段，并在插件目录内附上对应许可证文本；未声明时默认 AGPL-3.0。

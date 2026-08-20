@@ -32,7 +32,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r _neobot/requirements.txt ruff
+          pip install -r requirements-dev.txt
+          pip install -r _neobot/requirements.txt
           pip install -r _neobot/requirements-dev.txt 2>/dev/null || true
 
       - name: Validate manifests + contract boundary
@@ -67,6 +68,7 @@ jobs:
 
       - name: Install deps
         run: |
+          pip install -r requirements-dev.txt
           pip install -r _neobot/requirements.txt pytest pytest-asyncio
 
       - name: Prepare framework config (config_loader requires config.toml)
