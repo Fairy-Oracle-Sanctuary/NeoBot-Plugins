@@ -13,6 +13,7 @@ NeoBot 插件仓库校验脚本（CI 使用）。
     python3 scripts/validate_plugins.py --check-only   # 只校验，不写索引
 """
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -165,11 +166,11 @@ def collect_plugins() -> list[dict]:
                 "license": manifest.get("license", DEFAULT_LICENSE),
                 "dependencies": manifest.get("dependencies", []),
                 "entry": str(entry.relative_to(plugin_dir)),
-                "files": sorted(
-                    str(p.relative_to(plugin_dir))
+                "files": {
+                    str(p.relative_to(plugin_dir)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for p in plugin_dir.rglob("*")
                     if p.is_file() and "__pycache__" not in str(p) and p.name != "manifest.json"
-                ),
+                },
             }
         )
 

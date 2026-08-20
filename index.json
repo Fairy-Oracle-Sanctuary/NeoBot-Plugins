@@ -12,9 +12,9 @@
       "license": "AGPL-3.0",
       "dependencies": [],
       "entry": "plugin.py",
-      "files": [
-        "plugin.py"
-      ]
+      "files": {
+        "plugin.py": "125a1421b82689791e37c2de05c2a02232e85613564dc02a338d97353bc273d0"
+      }
     }
   ]
 }
