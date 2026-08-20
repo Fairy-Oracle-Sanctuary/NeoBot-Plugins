@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "generated_at": null,
+  "plugins": [
+    {
+      "name": "echo",
+      "description": "提供 echo 和 赞我 功能（契约示范插件）",
+      "usage": "/echo [内容] - 复读内容\n/赞我 - 让机器人给你点赞",
+      "version": "0.1.0",
+      "author": "镀铬酸钾",
+      "api_version": "1",
+      "dependencies": [],
+      "entry": "plugin.py",
+      "files": [
+        "plugin.py"
+      ]
+    }
+  ]
+}

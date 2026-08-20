@@ -1,0 +1,9 @@
+{
+  "name": "plugin_name",
+  "description": "一句话功能描述",
+  "usage": "/mycmd [参数] - 功能说明",
+  "version": "0.1.0",
+  "author": "你的名字",
+  "api_version": "1",
+  "dependencies": []
+}

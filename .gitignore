@@ -1,0 +1,25 @@
+# 框架配置（CI 临时生成，勿入库）
+config.toml
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# 运行时
+logs/
+
+# 构建产物
+dist/
+build/
+
+# 框架克隆（CI 用）
+_neobot/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
